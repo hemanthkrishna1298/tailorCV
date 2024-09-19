@@ -1,0 +1,361 @@
+%-------------------------
+% Resume in Latex
+% Based off of: https://github.com/sb2nov/resume
+% and Jake Gutierrez's version of it
+% at https://www.overleaf.com/latex/templates/jakes-resume/syzfjbzwjncs
+% inspired by https://practicaltypography.com/resumes.html
+% License : MIT
+%------------------------
+
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[margin = 0.5in]{geometry}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+
+%--------------UNDERLINING---------------
+% taken from https://alexwlchan.net/2017/10/latex-underlines/
+
+\usepackage{contour}
+\usepackage{ulem}
+
+\renewcommand{\ULdepth}{3.8pt}
+\contourlength{0.8pt}
+
+\newcommand{\myuline}[1]{%
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
+
+%----------------------------------------
+
+\graphicspath{ {./Images/} }
+
+%----------FONT OPTIONS----------
+\usepackage{fontspec}
+\usepackage{fontawesome5}
+
+% I could have just used the charter package here for the font I wanted...
+% but I'd still need to change compiler to XeLaTeX to include the title font
+% \usepackage{charter}
+
+\setmainfont{XCharter}
+
+\newfontfamily{\basictitle}{basictitlefont}[
+Path = Fonts/,
+Extension = .ttf,
+UprightFont = basictitlefont
+]
+% to use:
+% {\basictitle This text uses the basictitle font}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% \chead{check}
+
+% Adjust margins
+\iffalse
+% \iftrue
+% \addtolength{\oddsidemargin}{0.3in}
+% \addtolength{\marginparsep}{0in}
+% \addtolength{\evensidemargin}{0.3in}
+% \addtolength{\textwidth}{-0.5in}
+% \addtolength{\topmargin}{-0.8in}
+% \addtolength{\textheight}{0.3in}
+\fi
+
+\urlstyle{same}
+
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+    {\color{gray}\titlerule} \vspace{-5pt}
+    \vspace{8pt}\scshape\raggedright\normalfont
+}{}{0pt}{}
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+% ----- TOGGLE PHOTO --------
+% comment out \iffalse and remove the % from \iftrue to toggle photo
+\iffalse
+% \iftrue
+\begin{wrapfigure}{R}{0.15\textwidth}
+\vspace{-100pt}
+\includegraphics[scale=0.65]{_DSC0050 copyccc}
+\end{wrapfigure}
+\fi
+
+% \vspace{10pt}
+
+%----------HEADING----------
+{ \Large Hemantha Krishna Bharadwaj}
+\\
+
+% ----- TOGGLE FOR PHOTO ----
+\vspace{5pt}
+
+% \href{mailto:your@mail.com}{
+%     \faEnvelope
+%     \thinspace \thinspace
+%     \myuline{your@mail.com}} $|$
+% \href{https://linkedin.com/in/adventgineering}{
+%     \faLinkedin
+%     \thinspace \thinspace        
+%     \myuline{adventgineering}} $|$
+% \href{https://github.com/hkrsmk}{
+%     \faGithub
+%     \thinspace \thinspace
+%     \myuline{hkrsmk}} $|$
+% \faPhone
+% \thinspace \thinspace
+% +65 1234 5678
+
+
+\small \href{mailto:hemanthkrishna1298@gmail.com}{
+\faEnvelope
+\thinspace \thinspace
+hemanthkrishna1298@gmail.com} $|$
+\href{https://www.linkedin.com/in/hemantha-krishna-bharadwaj-2504a21ab/}{
+    \faLinkedin
+    \thinspace \thinspace        
+    LinkedIn} $|$
+% \href{https://github.com/hemanthkrishna1298}{
+%     \faGithub
+%     \thinspace \thinspace
+%     \myuline{Github}} $|$
+\faPhone
+\thinspace \thinspace
++1 470-838-8094
+% \thinspace \thinspace
+% \href{https://www.linkedin.com/in/hemantha-krishna-bharadwaj-2504a21ab/}{LinkedIn}
+\vspace{-4mm}
+%-----------EDUCATION-----------
+\section{Education}
+\vspace{-2mm}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Georgia Institute of Technology}{Atlanta, GA}
+      {MS Electrical and Computer Engineering, DSP-ML Specialization}{Aug 2022 -- Present}
+    \resumeSubheading
+      {Birla Institute of Technology and Science[BITS] Pilani}{India}
+      {B. Eng. Electrical and Electronics, GPA: 9.3/10}{Aug 2018 -- May 2022}
+
+%       \resumeItemListStart
+% \vspace{1mm}      
+%         \resumeItem{BITS Merit Scholarship, GPA: 9.2/10}
+
+    %   \resumeItemListEnd
+% \vspace{-1mm}      
+  \resumeSubHeadingListEnd
+
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     {\textbf{Relevant Coursework}: Data Structures, Algorithms, Digital Signal Processing, Statistical ML, Advanced Programming} \\
+     %Linear Algebra, Digital Signal Processing
+     }
+     }
+     \vspace{-0.5mm}
+    
+% \iftrue
+\iffalse
+    \small{\item{
+     \textbf{Programming Languages}: C, C++, Python, Verilog-HDL, x86 Assembly Language}}
+     \vspace{-0.5mm}
+     \small{\item{ \textbf{Relevant Software}: MATLAB, Jupyter, Git, Tensorflow, Xilinx ISE, Modelsim, SPICE}
+     }
+\fi
+    
+    \small{\item{
+     \textbf{Programming Languages}: C, C++, Python $|$ \textbf{Relevant Software}: Jupyter, Git, Tensorflow, Keras, Pytorch, MATLAB}
+     }
+     \vspace{-3mm}
+ \end{itemize}
+
+    %-----------PROJECTS-----------
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+      \vspace{-2mm}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Multi-modal audio-visual Raga and Singer Classification using CNNs}{Feb 2022 - April 2022}
+      {Research Assistant, Digital Audio Processing Lab, IIT Bombay}{}
+      %Supervisor: \href{https://www.ee.iitb.ac.in/wiki/faculty/prao}{Prof. Preeti Rao}
+      \resumeItemListStart
+        \resumeItem{Built \textbf{2D convolutional network} architectures for the identification of Raga (melodic mode) and singer in North Indian Classical Music performances.}
+        \resumeItem{Used a raga performance dataset which contains video recordings of different singers performing various ragas, that the model has to classify.}
+        \resumeItem{Experimented with various \textbf{spectrogram inputs with 2D CNN} for the classification task. This was further combined with vision-based CNN for multi-modal classification.}
+      \resumeItemListEnd
+ 
+    \resumeSubheading
+      {Speech Recognition in Agriculture, Finance for the Indian Poor}{Aug 2021 -- Feb 2022}
+      {Research Assistant, Indian Institute of Science}{}
+      %Supervisor: \href{https://eecs.iisc.ac.in/people/prasanta-kumar-ghosh/}{Prof. Prasanta Ghosh}
+      \resumeItemListStart
+        \resumeItem{Thesis project under IISc Bangalore's \href{https://respin.iisc.ac.in/}{\underline{SPIRE Lab}} funded by the \textbf{Bill and Melinda Gates Foundation}.}
+        \resumeItem{Contributed to the development of \textbf{automatic speech recognition}(ASR) models in local Indian languages for use in educationally backward rural areas.}
+        \resumeItem{Developed a domain-specific web scraping pipeline in Python to create NLP training text corpora in \textbf{nine local Indian languages} that increased scraping efficiency by \textbf{40\%}.}
+        \resumeItem{Used collected text corpora to design and train \textbf{domain-specific NLP language models} for use in speech recognition and speech-to-text systems.}
+        % \resumeItem{Creating open source resources for spurring research and development of speech recognition, speech-to-text algorithms in \textbf{nine local Indian languages}.}
+      \resumeItemListEnd
+  \vspace{2mm}
+    \resumeSubheading
+      {Identification and Cancellation of Fauna Noise using AI}{May 2021 -- Aug 2021}
+      {Research Assistant, University of Calgary}{}
+      %Supervisor: \href{https://people.ucalgary.ca/~smithmr/MRSmith_DepartmentalWeb/indexMain.htm}{Prof. Michael Smith
+      \resumeItemListStart
+        \resumeItem{Selected for an international research internship through the Mitacs Globalink Summer Research Program.}
+        \resumeItem{Developed \textbf{audio processing models using deep neural networks} for identification and cancellation of environmental fauna noise from professional audio recordings.}
+      \resumeItemListEnd
+  \vspace{2mm}
+
+        % \vspace{2mm}
+
+    \resumeSubheading
+      {Machine Learning in Healthcare-IoT}{Jul 2020 -- Feb 2021}
+      {Research Assistant, BITS IoT Lab}{}
+      % Supervisor: \href{https://www.bits-pilani.ac.in/pilani/vinaychamola/profile}{Prof. Vinay Chamola}
+      \resumeItemListStart
+
+        \resumeItem{Reviewed and documented the role of various machine learning algorithms in the development of more than \textbf{100 state-of-the-art Healthcare-IoT} systems.}
+        \resumeItem{Published a comprehensive 30-page paper detailing my findings in the IEEE Access journal.}
+        % \resumeItem{Drew comparisons in their performances in terms of gate count, area and delay.}
+      \resumeItemListEnd
+      \vspace{2mm}
+    \resumeSubheading
+      {Data Driven Modelling of Cascade Control Loops}{May 2020 -- Jun 2020}
+      {Research Assistant, Indira Gandhi Centre for Atomic Research}{}
+      %Supervisor: Dr. Aditya Gour
+      \resumeItemListStart
+        \resumeItem{Designed \textbf{PID control loops} for a nuclear power plant condenser system on \textbf{MATLAB} to automate coolant flow control between tanks.}
+        \resumeItem{Minimized the error in output to \textbf{0.05\%} by using \textbf{data driven} system modelling and a cascaded control system.}
+      \resumeItemListEnd
+\iffalse
+    \resumeSubheading
+      {Design of High-Performance Arithmetic Circuits}{Jan 2020 -- May 2020}
+      {Research Project, BITS Pilani}{Supervisor: Prof. S. Gurunarayanan}
+      \resumeItemListStart
+        \resumeItem{Studied, simulated and synthesized the \textbf{ripple carry adder, carry skip adder, and carry save adder} circuits using \textbf{Verilog-HDL}.}
+        % \resumeItem{Drew comparisons in their performances in terms of gate count, area and delay.}
+      \resumeItemListEnd
+\fi
+\vspace{-3mm}
+  \resumeSubHeadingListEnd
+
+\section{Publications and Conferences}
+\vspace{-3mm}
+\begin{itemize}[leftmargin=0.15in, label={}]
+
+    \small{\item{1. H. K. Bharadwaj et al., "A Review on the Role of Machine Learning in Enabling IoT Based Healthcare Applications," in IEEE Access, vol. 9, pp. 38859-38890, 2021}
+    \vspace{-2mm}
+     \item{2. "Audio Signal Processing for Environmental Noise Elimination", Biomedical Engineering Research Symposium 2021, University of Calgary}
+         \vspace{-2mm}
+    %  \item{3. "Dataset Collection and Curation for domain-specific Indic Language Processing using Python", NLP for Digital Humanities Workshop, 2021 [Submitted]}
+    %  \vspace{-2mm}
+     \item{3. Volunteer - International Society for Music Information Retrieval (ISMIR) Conference 2021}
+     }
+     \vspace{-3.5mm}
+ \end{itemize}
+%-----------RESEARCH-----------
+\section{Academic Achievements}
+  \resumeSubHeadingListStart
+  \vspace{-2mm}
+    \resumeSubheading
+      {Mitacs Globalink Research Scholarship}{\textit{2021}}
+      {}{}
+      \vspace{-3mm}
+      \resumeItemListStart
+        \resumeItem{Awarded a \textbf{full scholarship} to pursue my summer internship at the University of Calgary, Canada for the Summer of 2021}
+      \resumeItemListEnd
+            \vspace{1mm}
+    \resumeSubheading
+      {O.P. Jindal Engineering and Management Scholarship}{\textit{2019}}
+      {}{}
+       \vspace{-3mm}
+      \resumeItemListStart
+        \resumeItem{\textbf{1 of 80} engineering students from among the best academic performers in the \textbf{top 23} engineering institutes all over India.}
+%        \resumeItem{Nominated based on CGPA, qualified through a stringent shortlisting process involving a business proposal, online test and interview.}
+      \resumeItemListEnd
+      \vspace{1mm}
+    \resumeSubheading
+      {BITS Merit Scholarship}{\textit{2018-19}}
+      {}{}
+       \vspace{-3mm}
+      \resumeItemListStart
+        \resumeItem{Awarded the BITS Merit Scholarship for being in the \textbf{top 3\%} academic performers in my batch.}
+      \resumeItemListEnd
+      \vspace{-3mm}
+  \resumeSubHeadingListEnd
+
+%-----------RESEARCH-----------
+% \section{Community Service}
+% \vspace{-3mm}
+% \resumeItemListStart
+%         \resumeItem{Donated 30\% of the money awarded to me as scholarships to various philanthropic organisations and small scale business owners for COVID-19 relief.}
+%       \resumeItemListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+
+%-------------------------------------------
+\end{document}

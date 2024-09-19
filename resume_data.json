@@ -1,0 +1,26 @@
+{
+    "name": "John Doe",
+    "contact": {
+      "email": "john.doe@example.com",
+      "phone": "+1234567890",
+      "address": "123 Main St, Anytown, USA"
+    },
+    "education": [
+      {
+        "degree": "B.Sc. Computer Science",
+        "institution": "Anytown University",
+        "year": "2020"
+      }
+    ],
+    "experience": [
+      {
+        "job_title": "Software Developer",
+        "company": "TechCorp",
+        "years": "2020-2022",
+        "responsibilities": [
+          "Developed web applications using Python and Django.",
+          "Collaborated with the design team."
+        ]
+      }
+    ]
+  }
